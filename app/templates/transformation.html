@@ -1,0 +1,33 @@
+{% extends "main_menu.html" %}
+
+{% block transform %}
+{{super()}}
+
+{%if '/inches' in request.path%}
+    <div class="form-container">
+        <form action="/inches" method='post' class='transform'>
+            <p><label><input type="number" name="feet"></label></p>
+            <p><input type="submit" value="перетворити"></p>
+        </form>
+    </div>
+
+    {%elif '/yards' in request.path%}
+    <div class="form-container">
+        <form action="/yards" method='post' class='transform'>
+            <p><label><input type="number" name="feet"></label></p>
+            <p><input type="submit" value="перетворити"></p>
+        </form>
+    </div>
+
+    {%elif '/miles in request.path'%}
+    <div class="form-container">
+        <form action="/miles" method='post' class='transform'>
+            <p><label><input type="number" name="feet"></label></p>
+            <p><input type="submit" value="перетворити"></p>
+        </form>
+    </div>
+{%endif%}
+
+
+
+{% endblock  %}
